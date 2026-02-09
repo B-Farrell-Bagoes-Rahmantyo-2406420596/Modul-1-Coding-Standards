@@ -35,4 +35,10 @@ public class ProductController {
         model.addAttribute("products", allProducts);
         return "productList";
     }
+
+    @DeleteMapping("/delete")
+    public String deleteProductDelete(@ModelAttribute Product product, Model model){
+        service.delete(product);
+        return "deleteProduct";
+    }
 }
